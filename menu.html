@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Burger King Morocco</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+                    <!--  -->
+                    <img src="img/logo.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                    <!--<a href="service.html" class="nav-item nav-link">Service</a>-->
+                        <a href="menu.html" class="nav-item nav-link active">Menu</a>
+                        <!-- <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="booking.html" class="dropdown-item">Booking</a>
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            </div>
+                        </div> -->
+                        <a href="Restaurants.html" class="nav-item nav-link">Restaurants</a>
+                    </div>
+                     
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white-seconds mb-3 animated slideInDown">Food Menu</h1>
+                    <nav aria-label="breadcrumb">
+                        <!-- <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Menu</li>
+                        </ol> -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Menu Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <!-- <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5> -->
+                    <h1 class="mb-5">Explore Our Menu</h1>
+                </div>
+                <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+
+
+                    <div class="tab-carousel-wrapper d-md-none">
+                        <ul class="nav nav-pills d-inline-flex flex-nowrap overflow-auto custom-carousel mb-4">
+                            <!-- Tab 1 -->
+                            <li class="nav-item flex-shrink-0">
+                                <a class="d-flex align-items-center text-start me-3 pb-3 active" data-bs-toggle="pill" href="#tab-1">
+                                    <i class="fa fa-hamburger fa-2x text-primary"></i>
+                                    <div class="ps-3">
+                                        <small class="text-body">Main</small>
+                                        <h6 class="mt-n1 mb-0">Menu</h6>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- Tab 2 -->
+                            <li class="nav-item flex-shrink-0">
+                                <a class="d-flex align-items-center text-start me-3 pb-3" data-bs-toggle="pill" href="#tab-2">
+                                    <i class="fa fa-child fa-2x text-primary"></i>
+                                    <div class="ps-3">
+                                        <small class="text-body">Kids</small>
+                                        <h6 class="mt-n1 mb-0">Menu Kids</h6>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- Tab 3 -->
+                            <li class="nav-item flex-shrink-0">
+                                <a class="d-flex align-items-center text-start me-3 pb-3" data-bs-toggle="pill" href="#tab-3">
+                                    <i class="fa fa-glass-martini fa-2x text-primary"></i>
+                                    <div class="ps-3">
+                                        <small class="text-body">Refreshing</small>
+                                        <h6 class="mt-n1 mb-0">Drink</h6>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+</div>
+
+                    
+
+                    <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5 desktop">
+                        <!-- Tab 1 -->
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
+                                <i class="fa fa-hamburger fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">Main</small>
+                                    <h6 class="mt-n1 mb-0">Menu</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Tab 2 -->
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
+                                <i class="fa fa-child fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">Kids</small>
+                                    <h6 class="mt-n1 mb-0">Menu Kids</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- Tab 3 -->
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3">
+                                <i class="fa fa-glass-martini fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">Refreshing</small>
+                                    <h6 class="mt-n1 mb-0">Drink</h6>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                
+                    <div class="tab-content">
+                        <!-- Tab 1 Content: Menu -->
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                            <div class="row g-4  justify-content-center">
+                                <!-- START MENU ITEMS -->
+                        
+                                <!-- Menu Double WHOPPER® -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/172474792166cd90915f67b_Double%20Whopper.png" alt="Menu Double WHOPPER®" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="mb-2 text-primary">Menu Double WHOPPER®</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Un classique généreux avec deux steaks WHOPPER® grillés à la flamme.</p>
+                                        <div class="price mb-3">91 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                        
+                                <!-- Menu King Fish Spicy -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/172474798366cd90cf26cc8_King%20Fish%20Spicy.png" alt="Menu King Fish Spicy" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="mb-2 text-primary">Menu King Fish Spicy</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Un poisson croustillant avec une touche épicée irrésistible.</p>
+                                        <div class="price mb-3">58 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                        
+                                <!-- Menu King's Beef -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/172474786666cd905adef8e_King's%20Beef%20-%20Menu.png" alt="Menu King's Beef" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="mb-2 text-primary">Menu King's Beef</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Savoureux bœuf avec une recette royale.</p>
+                                        <div class="price mb-3">85 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                        
+                                <!-- Menu Triple Whopper® -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/172474810066cd91442b331_Triple%20Whopper.png" alt="Menu Triple Whopper®" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="mb-2 text-primary">Menu Triple Whopper®</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Trois steaks juteux pour les vrais gourmands.</p>
+                                        <div class="price mb-3">100 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                        
+                                <!-- Menu WHOPPER ® -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/172474868066cd9388e15de_Whopper.png" alt="Menu WHOPPER ®" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="mb-2 text-primary">Menu WHOPPER ®</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">L’original, légendaire et inégalé.</p>
+                                        <div class="price mb-3">77 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                        
+                                <!-- Menu Big King XXL -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/172474819366cd91a1dc55a_Big%20King%20XXL.png" alt="Menu Big King XXL" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="mb-2 text-primary">Menu Big King XXL</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Double dose de Big King pour gros appétit.</p>
+                                        <div class="price mb-3">91 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                        
+                                <!-- Menu Double Chicken Royal ® -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/172474830466cd921027d0f_Double%20Chicken%20Royal.png" alt="Menu Double Chicken Royal ®" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="mb-2 text-primary">Menu Double Chicken Royal ®</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Double plaisir au poulet croustillant.</p>
+                                        <div class="price mb-3">91 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                        
+                                <!-- Menu Bacon Steakhouse Beef -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/172474838666cd926233366_Steakhouse%20Bacon%20Beef.png" alt="Menu Bacon Steakhouse Beef" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="mb-2 text-primary">Menu Bacon Steakhouse Beef</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Le steakhouse revisité au bacon.</p>
+                                        <div class="price mb-3">85 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                        
+                                <!-- Menu Bacon Steakhouse Double -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/172474844366cd929bbd863_Double%20Bacon%20Steakhouse.png" alt="Menu Bacon Steakhouse Double" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="mb-2 text-primary">Menu Bacon Steakhouse Double</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Double portion pour double plaisir bacon.</p>
+                                        <div class="price mb-3">96 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                        
+  <!-- Menu Chilli Royal -->
+  <div class="col-lg-3 col-md-6">
+    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474862766cd935344755_Chili%20Royal.png" style="width: 180px; height: 200px; object-fit: cover;">
+        <h5 class=" text-primary">Menu Chilli Royal</h5>
+        <p class="text-muted small mb-3 flex-grow-1">Hot and bold chili delight.</p>
+        <div class="price mb-3">86 MAD</div>
+        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Order Now</a>
+    </div>
+</div>
+
+<!-- Menu Chicken Crispy -->
+<div class="col-lg-3 col-md-6">
+    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474873966cd93c3a4465_Chicken%20Crispy.png" style="width: 180px; height: 200px; object-fit: cover;">
+        <h5 class=" text-primary">Menu Chicken Crispy</h5>
+        <p class="text-muted small mb-3 flex-grow-1">Crispy, golden, and satisfying.</p>
+        <div class="price mb-3">61 MAD</div>
+        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Order Now</a>
+    </div>
+</div>
+
+<!-- Menu Chicken Royal -->
+<div class="col-lg-3 col-md-6">
+    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474878666cd93f2ea929_Chicken%20Royal.png" style="width: 180px; height: 200px; object-fit: cover;">
+        <h5 class=" text-primary">Menu Chicken Royal ®</h5>
+        <p class="text-muted small mb-3 flex-grow-1">A royal treat for chicken lovers.</p>
+        <div class="price mb-3">76 MAD</div>
+        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Order Now</a>
+    </div>
+</div>
+
+<!-- Menu King Fish -->
+<div class="col-lg-3 col-md-6">
+    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474884466cd942c0c409_King%20Fish.png" style="width: 180px; height: 200px; object-fit: cover;">
+        <h5 class=" text-primary">Menu King Fish</h5>
+        <p class="text-muted small mb-3 flex-grow-1">Tender fish served king style.</p>
+        <div class="price mb-3">56 MAD</div>
+        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Order Now</a>
+    </div>
+</div>
+
+<!-- Menu Big King -->
+<div class="col-lg-3 col-md-6">
+    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474895566cd949b0a618_Big%20King%20Beef.png" style="width: 180px; height: 200px; object-fit: cover;">
+        <h5 class=" text-primary">Menu Big King</h5>
+        <p class="text-muted small mb-3 flex-grow-1">Double the layers, double the taste.</p>
+        <div class="price mb-3">63 MAD</div>
+        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Order Now</a>
+    </div>
+</div>
+
+<!-- Menu Hamburger -->
+<div class="col-lg-3 col-md-6">
+    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474899566cd94c342679_Hamburger.png" style="width: 180px; height: 200px; object-fit: cover;">
+        <h5 class=" text-primary">Menu Hamburger</h5>
+        <p class="text-muted small mb-3 flex-grow-1">Simplicity done right.</p>
+        <div class="price mb-3">28 MAD</div>
+        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Order Now</a>
+    </div>
+</div>
+
+<!-- Menu Chicken Burger -->
+<div class="col-lg-3 col-md-6">
+    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474905266cd94fcc2786_Chicken%20Burger.png" style="width: 180px; height: 200px; object-fit: cover;">
+        <h5 class=" text-primary">Menu Chicken Burger</h5>
+        <p class="text-muted small mb-3 flex-grow-1">Crispy chicken in every bite.</p>
+        <div class="price mb-3">32 MAD</div>
+        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Order Now</a>
+    </div>
+</div>
+
+<!-- Menu Cheese Burger -->
+<div class="col-lg-3 col-md-6">
+    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474910366cd952f1ef31_Cheeseburger.png" style="width: 180px; height: 200px; object-fit: cover;">
+        <h5 class=" text-primary">Menu Cheese Burger</h5>
+        <p class="text-muted small mb-3 flex-grow-1">Cheesy goodness in a bun.</p>
+        <div class="price mb-3">31 MAD</div>
+        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Order Now</a>
+    </div>
+</div>
+                            </div>
+                        </div>
+                        
+                
+                        <!-- Tab 2 Content: Menu Enfant -->
+                        <div id="tab-2" class="tab-pane fade show p-0">
+                            <div class="row g-4  justify-content-center">
+                                <!-- Enfant Item 1 -->
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474915466cd95628766e_Menu%20Hamburger.png" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class=" text-primary">Menu Enfant Burger</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Repas enfant délicieux et savoureux.</p>
+                                        <div class="price mb-3">33 MAD</div>
+                                        <a href="#" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Enfant Item 2 -->
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474917566cd9577191af_Menu%20Fish%20Burger.png" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class=" text-primary">Menu Enfant Fish</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Poisson croustillant pour les petits gourmands.</p>
+                                        <div class="price mb-3">33 MAD</div>
+                                        <a href="#" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Enfant Item 3 -->
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474919666cd958cc41e2_Menu%20Cheeseburger.png" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class=" text-primary">Menu Enfant Cheeseburger</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Cheeseburger fondant pour les enfants.</p>
+                                        <div class="price mb-3">33 MAD</div>
+                                        <a href="#" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Enfant Item 4 -->
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474925166cd95c3af5bc_Menu%20Chicken%20Nuggets.png" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class=" text-primary">Menu Enfant Chicken Nuggets</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Nuggets croustillants pour les petits.</p>
+                                        <div class="price mb-3">33 MAD</div>
+                                        <a href="#" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Enfant Item 5 -->
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid rounded-circle mb-3" src="https://cdn.getsolo.io/172474929166cd95eb6c84d_Menu%20Chicken%20Burger.png" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class=" text-primary">Menu Enfant Chicken Burger</h5>
+                                        <p class="text-muted small mb-3 flex-grow-1">Burger au poulet tendre et savoureux.</p>
+                                        <div class="price mb-3">33 MAD</div>
+                                        <a href="#" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                
+                        <!-- Tab 3 Content: Drink -->
+                        <div id="tab-3" class="tab-pane fade show p-0">
+                            <div class="row g-4 justify-content-center">
+                                <!-- Item 1 -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/172475037766cd9a290acda_Sundae%20Chocolat.png" alt="Sundae Chocolat" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="text-muted small mb-3 flex-grow-1" style="font-size:20px !important; color: brown !important">Sundae Chocolat</h5>
+                                        <div class="price mb-3">18 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Item 2 -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/172475043166cd9a5fe5639_Sundae%20fraise.png" alt="Sundae Fraise" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="text-muted small mb-3 flex-grow-1" style="font-size:20px !important; color: brown !important">Sundae Fraise</h5>
+                                        <div class="price mb-3">18 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Item 3 -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/164890504962484b593ba35_phpdfxbv5" alt="Sundae Caramel" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="text-muted small mb-3 flex-grow-1" style="font-size:20px !important; color: brown !important">Sundae Caramel</h5>
+                                        <div class="price mb-3">18 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Item 4 -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://s3.eu-west-1.amazonaws.com/solo.uploads/15841055865e6b8872078ad_phpq1VaQH" alt="King Fusion KitKat" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="text-muted small mb-3 flex-grow-1" style="font-size:20px !important; color: brown !important">King Fusion KitKat</h5>
+                                        <div class="price mb-3">24 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Item 5 -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://s3.eu-west-1.amazonaws.com/solo.uploads/15841055945e6b887a173c5_phpq3D6Rx" alt="King Fusion M&M's" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="text-muted small mb-3 flex-grow-1" style="font-size:20px !important; color: brown !important">King Fusion M&M's</h5>
+                                        <div class="price mb-3">24 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Item 6 -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://s3.eu-west-1.amazonaws.com/solo.uploads/15841056045e6b8884868a4_phpADMEsE" alt="King Fusion Oreo" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="text-muted small mb-3 flex-grow-1" style="font-size:20px !important; color: brown !important">King Fusion Oreo</h5>
+                                        <div class="price mb-3">24 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Item 7 -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/162506097660dc76706809e_phpFxhhWU" alt="Milkshake Vanille" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="text-muted small mb-3 flex-grow-1" style="font-size:20px !important; color: brown !important">Milkshake Vanille</h5>
+                                        <div class="price mb-3">18 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Item 8 -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/162506101360dc76952c17d_phpzZLm1w" alt="Milkshake Chocolat" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="text-muted small mb-3 flex-grow-1" style="font-size:20px !important; color: brown !important">Milkshake Chocolat</h5>
+                                        <div class="price mb-3">18 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Item 9 -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/162506105660dc76c0b7ce1_phpF84rWr" alt="Milkshake Strawberry" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="text-muted small mb-3 flex-grow-1" style="font-size:20px !important; color: brown !important">Milkshake Strawberry</h5>
+                                        <div class="price mb-3">18 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Item 10 -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/162506108260dc76dae15b6_phpNRznHB" alt="Milkshake Caramel" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="text-muted small mb-3 flex-grow-1" style="font-size:20px !important; color: brown !important">Milkshake Caramel</h5>
+                                        <div class="price mb-3">18 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Item 11 -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/162506109760dc76e97a3c5_phpJoJSbf" alt="Milkshake Oreo" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="text-muted small mb-3 flex-grow-1" style="font-size:20px !important; color: brown !important">Milkshake Oreo</h5>
+                                        <div class="price mb-3">20 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            
+                                <!-- Item 12 -->
+                                <div class="col-lg-3 col-md-6 col-sm-12">
+                                    <div class="menu-item d-flex flex-column text-center p-4 border rounded shadow hover-effect h-100">
+                                        <img class="img-fluid mb-3" src="https://cdn.getsolo.io/162506113060dc770a7c978_phpTEdCXQ" alt="Milkshake Kit Kat" style="width: 180px; height: 200px; object-fit: cover;">
+                                        <h5 class="text-muted small mb-3 flex-grow-1" style="font-size:20px !important; color: brown !important">Milkshake Kit Kat</h5>
+                                        <div class="price mb-3">22 MAD</div>
+                                        <a href="https://morocco.burgerking.delivery/menu" class="btn btn-primary rounded-pill px-4 py-2 text-white shadow-sm mt-auto">Ajouter au panier</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Menu End -->
+        
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="menu.html">Menu</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Boulevard Zerktouni Twin Center Tour Ouest, Casablanca 20100</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>05227-96638</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
+                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
+                        <p>09AM - 09PM</p>
+                        <h5 class="text-light fw-normal">Sunday</h5>
+                        <p>10AM - 08PM</p>
+                    </div> -->
+                      <div class="col-lg-4 col-md-6">
+                    <form id="newsletterForm" action="submti" method="POST">
+                            <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
+                            <p>Hungry for great deals? Subscribe to our newsletter for exclusive offers, promotions!</p>
+                            <div class="position-relative mx-auto" style="max-width: 400px;">
+                                <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="email" name="email" placeholder="Your email" required>
+                                <button type="submit" name="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            </div>
+                    </form>
+                    </div>
+                    
+<script>document.getElementById("newsletterForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop form from redirecting
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const url = "https://script.google.com/macros/s/AKfycbw0e86g6UDVLISw1gwPBZ6tiX4CN_IFjVcNsToAhzDYPEMz32GXbfjv56gQqKdqbsHp/exec";
+
+    // Send the form data to the Apps Script URL
+    fetch(url, {
+        method: "POST",
+        body: formData,
+    })
+    .then(response => response.text()) // Parse response as plain text
+    .then(data => {
+        if (data.trim() === "Success") {
+            // Show a custom pop-up with the success message
+            showCustomPopup("Thank you for subscribing!");
+        } else {
+            // Show a custom pop-up with the error message
+            showCustomPopup("An error occurred: " + data);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        // Show a custom pop-up with the error details
+        showCustomPopup("An error occurred. Please try again.");
+    });
+});
+
+// Function to display a creative custom pop-up
+function showCustomPopup(message) {
+    // Create the overlay background
+    const overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    overlay.style.zIndex = "999";
+    overlay.style.display = "flex";
+    overlay.style.justifyContent = "center";
+    overlay.style.alignItems = "center";
+
+    // Create the pop-up container
+    const popup = document.createElement("div");
+    popup.style.position = "relative";
+    popup.style.width = "300px";
+    popup.style.padding = "20px";
+    popup.style.backgroundColor = "#fff";
+    popup.style.borderRadius = "10px";
+    popup.style.textAlign = "center";
+    popup.style.boxShadow = "0px 4px 20px rgba(0, 0, 0, 0.2)";
+    popup.style.animation = "fadeIn 0.5s ease-out";
+
+    // Add the message to the pop-up
+    const messageText = document.createElement("p");
+    messageText.textContent = message;
+    messageText.style.margin = "0";
+    messageText.style.fontSize = "18px";
+    messageText.style.color = "#333";
+    messageText.style.fontWeight = "bold";
+    popup.appendChild(messageText);
+
+    // Add a success/checkmark icon
+    const icon = document.createElement("div");
+    icon.innerHTML = "✔️";
+    icon.style.fontSize = "40px";
+    icon.style.marginTop = "10px";
+    icon.style.color = "#28a745";
+    popup.prepend(icon);
+
+    // Append the pop-up to the overlay
+    overlay.appendChild(popup);
+
+    // Append the overlay to the body
+    document.body.appendChild(overlay);
+
+    // Keyframes for fade-in animation
+    const style = document.createElement("style");
+    style.textContent = `
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Automatically remove the pop-up after 2 seconds
+    setTimeout(() => {
+        document.body.removeChild(overlay); // Remove the overlay and pop-up
+    }, 2000); // 2000ms = 2 seconds
+}
+</script>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">General First Food</a>, All Right Reserved. 
+							 
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer End -->
+
+
+
+        
+        <!-- Back to Top -->
+         
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    
+
+<script>
+(function () {
+  if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+    window.chatbase = (...arguments) => {
+      if (!window.chatbase.q) {
+        window.chatbase.q = [];
+      }
+      window.chatbase.q.push(arguments);
+    };
+    window.chatbase = new Proxy(window.chatbase, {
+      get(target, prop) {
+        if (prop === "q") return target.q;
+        return (...args) => target(prop, ...args);
+      },
+    });
+  }
+
+  const onLoad = function () {
+    const script = document.createElement("script");
+    script.src = "https://www.chatbase.co/embed.min.js";
+    script.id = "CxLa0vzvBNle0F7Z67IAS";
+    script.setAttribute("domain", "www.chatbase.co");
+    document.body.appendChild(script);
+
+    window.chatbase('setConfig', {
+      widget: {
+        showDefaultLauncher: false
+      }
+    });
+  };
+
+  if (document.readyState === "complete") {
+    onLoad();
+  } else {
+    window.addEventListener("load", onLoad);
+  }
+})();
+</script>
+
+
+</body>
+<style>
+  .chatbase-container {
+    max-width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .chatbase-iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    min-height: 700px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .chatbase-iframe {
+      min-height: 600px;
+      border-radius: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .chatbase-iframe {
+      min-height: 550px;
+    }
+  }
+</style>
+</html>
+

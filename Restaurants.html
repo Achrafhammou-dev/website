@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BK Morocco</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+                    <!--  -->
+                    <img src="img/logo.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                    <!--<a href="service.html" class="nav-item nav-link">Service</a>-->
+                        <a href="menu.html" class="nav-item nav-link">Menu</a>
+                        <!-- <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="booking.html" class="dropdown-item">Booking</a>
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            </div>
+                        </div> -->
+                        <a href="Restaurants.html" class="nav-item nav-link active">Restaurants</a>
+                    </div>
+                     
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white-seconds mb-3 animated slideInDown">Where To Find Us!</h1>
+                    <nav aria-label="breadcrumb">
+                        <!-- <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                        </ol> -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+
+        <div class="container-xxl pt-5 pb-3">
+            <!-- <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <h1 class="mb-5">We are In!</h1>
+
+                    <div id="map" style="height: 500px; width: 100%;"></div>
+
+
+                </div>        
+            </div> -->
+        <!-- Seats Start -->
+         
+                        <!-- <div id="map"></div> -->
+
+
+        <div class="container-xxl pt-5 pb-3">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.4s">
+                    <h1 class="mb-5">Our Restaurants</h1>
+                </div>
+
+
+
+                <div class="container mb-5">
+               <div class="filter-carousel d-flex flex-nowrap overflow-auto px-3 py-2 bk-carousel">
+  <button class="bk-btn" data-city="all">🍔 Tous</button>
+  <button class="bk-btn" data-city="casablanca">🏙️ Casablanca</button>
+  <button class="bk-btn" data-city="rabat">🏛️ Rabat</button>
+  <button class="bk-btn" data-city="tanger">🌊 Tanger</button>
+  <button class="bk-btn" data-city="el jadida">🏖️ El Jadida</button>
+  <button class="bk-btn" data-city="agadir">☀️ Agadir</button>
+  <button class="bk-btn" data-city="tetouan">🌄 Tétouan</button>
+  <button class="bk-btn" data-city="fes">🕌 Fès</button>
+  <button class="bk-btn" data-city="marrakech">🌴 Marrakech</button>
+  <button class="bk-btn" data-city="sale">🌁 Salé</button>
+  <button class="bk-btn" data-city="settat">🌾 Settat</button>
+  <button class="bk-btn" data-city="beni mellal">⛰️ Beni Mellal</button>
+  <button class="bk-btn" data-city="larache">🏝️ Larache</button>
+  <button class="bk-btn" data-city="temara">🏄‍♂️ Temara</button>
+  <button class="bk-btn" data-city="zeir">🌅 Zeir</button>
+  <button class="bk-btn" data-city="el bayda">🏜️ El Bayda</button>
+  <button class="bk-btn" data-city="mohammadia">🏖️ Mohammadia</button>
+</div>
+
+</div>
+
+                </div>
+                
+
+<div class="row g-4" id="restaurant-cards">
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+        <div class="bk-premium-card">
+            <div class="bk-card-img-wrapper">
+                <img src="https://res.cloudinary.com/farouk/image/upload/t_meduim/oXOntOARf" alt="BK Morocco Mall">
+                <span class="bk-city-badge">Casablanca</span>
+            </div>
+            <div class="bk-card-info">
+                <h5>BK Morocco Mall</h5>
+                <a href="https://www.google.com/maps/place/Burger+King/@33.5750736,-7.7081276,548m/data=!3m2!1e3!4b1!4m6!3m5!1s0xda7d4a33b9c33d7:0x8a364a7f3f4f0c85!8m2!3d33.5750736!4d-7.7081276!16s%2Fg%2F11g734wzyx?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="bk-location-btn">
+                    <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="rabat">
+        <div class="bk-premium-card">
+            <div class="bk-card-img-wrapper">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYuEY90CtNrtoEBXS1MRbLNmguhfasrrQqPQ&s" alt="BK Kitea Geant">
+                <span class="bk-city-badge">Rabat</span>
+            </div>
+            <div class="bk-card-info">
+                <h5>BK Kitea Geant</h5>
+                <a href="https://www.google.com/maps/place/Burger+King+-+Kit%C3%A9a+Geant/@33.9558579,-6.8437156,545m/data=!3m2!1e3!4b1!4m6!3m5!1s0xda713513a77f4b9:0x75793757862f6434!8m2!3d33.9558579!4d-6.8411407!16s%2Fg%2F1hhlsb362?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="bk-location-btn">
+                    <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxBHK0OXOEGa2qZvEOhR4NYEJNPBsXXtMQ-b1qqQDMxcm-hmWEFTjvPXTW0kVTqZQmpkPDzOIvOdTpsnvNLXOAxOHwxLzlMFWU2PCchqyNdNdhBXEuhXma9HKbfLo-M16ufbvCL1g=s1360-w1360-h1020-rw" alt="BK Anfa Place">
+            <span class="bk-city-badge">Casablanca</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Anfa Place</h5>
+            <a href="https://maps.google.com/?cid=513350575461959360&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="fes">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxOf7I_qij1HnFN90BVUSWUw4-U7Qs11yip6JUMZbsTSXEtDPpuovX07G6VwdtKVkv14vAUs4qBOZmvInzvwfpHJVc5uu-9odBTCMDLJ-cyBCJ7XBwdwMFkHt0hXWD73r14QFXZoA=s1360-w1360-h1020-rw" alt="BK Borj Fez">
+            <span class="bk-city-badge">Fes</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Borj Fez</h5>
+            <a href="https://maps.google.com/?cid=13520329062038897768&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="rabat">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/b9/04/4b/der-burger-king-agdal.jpg?w=1200&h=1200&s=1" alt="BK Agdal Rabat">
+            <span class="bk-city-badge">Rabat</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Agdal Rabat</h5>
+            <a href="https://maps.google.com/?cid=3833434415203900000&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipPHEoyl0Fd_Y2-lxGv_w3TNBSpeS1M9LFodlO-Q=s1360-w1360-h1020-rw" alt="BK Maarif">
+            <span class="bk-city-badge">Casablanca</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Maarif</h5>
+            <a href="https://maps.google.com/?cid=14291704678981901695&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="marrakech">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwLGkPzXs_ku9jl1ojz1GCwENOacy61YxV_1G54k6Bt_CNChIshnw-cnIg4wuj6ml9rzukHATFfVc5lFMfNBbov4gvSFFfHnKkBcPPVNFTJxPRPUp9WWulK1GLJLI7wyO6pSOsU=s1360-w1360-h1020-rw" alt="BK Carre Eden">
+            <span class="bk-city-badge">Marrakech</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Carre Eden</h5>
+            <a href="https://maps.google.com/?cid=9083482589784646073&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="tanger">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwY3zlQUz_lS51DLdrzeRZ9KncDieOVb0ZhCnDXTzHIhGvuUA-fiDoAklUbANfPPrm8fcCiOBchVL20X5QAvJOWd6ZvsoM7sY8lenw0Gptqf5OOUgAFmbMbxqEPNPpBLSBy5pZKbA=s1360-w1360-h1020-rw" alt="BK Tanger City Center">
+            <span class="bk-city-badge">Tanger</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Tanger City Center</h5>
+            <a href="https://maps.google.com/?cid=8921784315848579367&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="marrakech">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyDATUT1z3vXUwERdeJJKhG_oS2zFOrU2PTmaoZiDVvGbc7TdQ0cc_wCsKHm1aC4gGds_MWQogMlSfYgV1dN4zh0XyZCWj9pSrjbIHNFcxBBahTYNUl8PvZG1LzG_4MkcBy3qoW1AUhpmDk=s1360-w1360-h1020-rw" alt="BK Al Mazar">
+            <span class="bk-city-badge">Marrakech</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Al Mazar</h5>
+            <a href="https://maps.google.com/?cid=7566316840994735008&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSy8-dY7XnfCYIFE3tiL4HU-YhUSOkLlBQb0GVVxfbowJ7MBKGRtA8BDe1LHUrP57-NaQrzDUu8tDxqKQC17Pnw_Zsqm7XpEBlhFbwyTpkHhDE4cHta2qmT3mP0LAqnaPyFo_YSydg=s1360-w1360-h1020-rw" alt="BK Exit Casa">
+            <span class="bk-city-badge">Casablanca</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Exit Casa</h5>
+            <a href="https://maps.google.com/?cid=11168437112986918862&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSy73A7cVm4wHEJ2HRBZO9V6GQICcmChmAFA21zTHiT-HcTgs7E95tXxou2S5rEb-VvxRzIj_EANLsHvbrgy8SOFlJVMS35GvqWxgyRkG190cbIT3SG5cWkTs6Opsqr5mT6y40U=s1360-w1360-h1020-rw" alt="BK Sidi Maarouf">
+            <span class="bk-city-badge">Casablanca</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Sidi Maarouf</h5>
+            <a href="https://maps.google.com/?cid=7212757309692994459&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="tanger">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyEr1NRx0O7rIUjEE7QQfS8QNTj1CQsrdmnWysdFR02WZPLBrBhnFOWPkuSmJ_inj6gOn8ZzE2MrKL7Ohaij2lKbtIIwT8342kDLNZr5br10llNG_mDAA3aXUtIjR0KwhVUoSwkUA=s1360-w1360-h1020-rw" alt="BK Socco Alto">
+            <span class="bk-city-badge">Tanger</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Socco Alto</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Socco+Alto+Tanger" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="fes">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwK4eeb0EQhINWi5eD_ksLWIUCkB9I9ZCjq0yR2Eiq92J8LQ4CpcRwo_7Cc3pz_Sr34vjSAAQcv2G2oOCVXY8xPun4F2qA69qt0x_u1DtlD53_H6m-_wWX0GwfoQHgMm5e9yIY01A=s1360-w1360-h1020-rw" alt="BK Lafayette">
+            <span class="bk-city-badge">meknes</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Lafayette</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Lafayette+Fes" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="beni mellal">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSz5xpUsvRGKp0wgcY6fBVU3YPOrjgajATQ1ZeZvZvquq4hdz8dULyxkWac13UnY-6mcK8m3QGYieeir1OWBVeteR22XZoU9ROXmJ-oZ8cGc0UI53sn5-U_TW2ne_2znevbY2B4=s1360-w1360-h1020-rw" alt="BK Beni Mellal">
+            <span class="bk-city-badge">Beni Mellal</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Beni Mellal</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Beni+Mellal" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="el jadida">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOESdF2xH0RiTPvesw1kd5k1UgbC9a6ANlk7FYu=s1360-w1360-h1020-rw" alt="BK El Jadida">
+            <span class="bk-city-badge">El Jadida</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK El Jadida</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+El+Jadida" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="rabat">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzGSh6TH1kQs-WWn0w4Dp17gkC-M4aIlEu-VXx1qunqe5VBeA85I4FG-wHOcD6K93gkipmvyR76EdhW67vzUkDHLkCk-kpxmFhZ3nnXauCBAiTsIGXcvYKUCcKaQJN0amR0rI-m=s1360-w1360-h1020-rw" alt="BK Arribat Center">
+            <span class="bk-city-badge">Rabat</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Arribat Center</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Arribat+Center+Rabat" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="marrakech">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOxOsPaFg55XIjAVqhaMf4RIMyj4HImBRhDAeOa=s1360-w1360-h1020-rw" alt="BK Menara Mall">
+            <span class="bk-city-badge">Marrakech</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Menara Mall</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Menara+Mall+Marrakech" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwzhp-x4s_9xA_cEzs-YZ38migiDtDv5bO6GZxE4QB7ZvBr4cXGPTeJWaK4fQ30LPO4FR2l2FfGL79EzG_2lukIIEbmlXm20MfGcUwHOKTEB9V8_r6SEnvDetgoGxvuACQX1ACY=s1360-w1360-h1020-rw" alt="BK Abdelmoumen">
+            <span class="bk-city-badge">Casablanca</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Abdelmoumen</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Abdelmoumen+Casablanca" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="harhoura">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyIFpqm3FI3qlnPaI4ppf8sLJMUN6UXcZ2AYTo3Dg8JzcoL3mXEZnkbnybMt57mn7pn2whkVUbdzRG9t50Dh2rkIX66MP2EyWpyMqvgVytnZsGTdv1G6ylopwWsWHrMkx1CU-W-EjmX5UU=s1360-w1360-h1020-rw" alt="BK Harhoura">
+            <span class="bk-city-badge">Harhoura</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Harhoura</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Harhoura" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOaXGjwRG_XMV5D3tqlnvBZRtwcyUPm7RH2gzpC=s1360-w1360-h1020-rw" alt="BK Tachfine Center">
+            <span class="bk-city-badge">Casablanca</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Tachfine Center</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Tachfine+Center+Casablanca" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwlODtgIQrtbCwiGU6wUV3An8E4q0nq1Z7B0xIXhXIaQ-hRsUz-EaF1K-G_GPXCcM-ATVlzc8hZphR9oXENrJAEs7sxOtohlgSTL2OY3Hjw_5DQVWc7jXbZlc2NIIawWC5DgF8=s1360-w1360-h1020-rw" alt="BK Marina">
+            <span class="bk-city-badge">Casablanca</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Marina</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Marina+Shopping+Casablanca" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="mohammedia">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSy7qwkTHRLz6lmpiFZXCWgPB_WaDqUWvKLWyugqPPnFCOWekNeus0hg2yNJ8N0X7UUjqXli1he_n3fJ7XrXuJHSvCF7haFftUjFEuzxeDx-0nn1XzS4FXcbBUWBkSj0cGpBg0Zo=s1360-w1360-h1020-rw" alt="BK Mohammedia">
+            <span class="bk-city-badge">Mohammedia</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Mohammedia</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Mohammedia" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="dar bouazza">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSw0rPta2qxO26UZOLNl4oj9tGuckLMvTkgJS9Co1mfu7kqZgl0it6ncf3-Htu-3Ug5GGKvU7-oKXngxRvJV5nPi9LEPJ6LSQNiQ1XrbQlAkxnO1bfvOYxgZiMPQ4t-C3jo4OyZPdQ=s1360-w1360-h1020-rw" alt="BK Dar Bouazza">
+            <span class="bk-city-badge">Dar Bouazza</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Dar Bouazza</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Dar+Bouazza" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://anfaplacemall.com/wp-content/uploads/2022/02/2_result.jpg" alt="BK Bd Anfa">
+            <span class="bk-city-badge">Casablanca</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Bd Anfa</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Boulevard+Anfa+Casablanca" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="rabat">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxaca8yR9A0MFh4bMJbOvQZ2_GJemFCuVt1NYU1KTEYnCWD-fp5KIyUlk8VLvvzSlz0XEQJWWLkkdJ4z4WGnXf3mqr_5THXYczyJ08KWMqsI_mjEkK7Wdmh5dH6ER34AxctbF5g19vXqsQ=s1360-w1360-h1020-rw" alt="BK Mahaj Riad">
+            <span class="bk-city-badge">Rabat</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Mahaj Riad</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Mahaj+Riad+Rabat" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="tetouan">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxYi39wMKDe_wdTAO0qF0_aW-hgxmkiVjh0Xc4Phd8aDM0tmDxKFfaVSUXbulYU1z8i2eN5lp2JyTNALeOll0hdi-0sTuVPNE9Wz_2T_X9vfdfpbThaAdfUjrx1aT2dja8cvYFCCg=s1360-w1360-h1020-rw" alt="BK Tetouan">
+            <span class="bk-city-badge">Tetouan</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Tetouan</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Tetouan" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="larache">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzTaOjAvbqGUbO9Bf90oNs8p0x85iV-KH5YtEtamtOpHss150JQtM46GWF2TjGt_cZnR02jjkNSUhaM1cZ_fF1qtZffHJYcHy9yvVaHLMUGFzGuXLX6f1OD8qHuL7ZA17jvC3EA=s1360-w1360-h1020-rw" alt="BK Laaraache">
+            <span class="bk-city-badge">Laarache</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Laarache</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Larache" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="tanger">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwTmjCqNctPRYvZjLCf0PrqT5xBtE09CmaN67bc5rWo5V84FrBteT6wsV4BUZfPCEbtB5yHdcKtcLYnO_3vXGBzgWuJVta12Nxo3fNNBaSNlV3j4Qp-KMpAbdI6tSz6N1yxDnM=s1360-w1360-h1020-rw" alt="BK Ibn Battouta">
+            <span class="bk-city-badge">Tanger</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Ibn Battouta</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Ibn+Batouta+Mall+Tanger" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="marrakech">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipMpJX8cp8s5dQJl-4yYTHGR_mkRp6-jygWUSlR_=s1360-w1360-h1020-rw" alt="BK Targa">
+            <span class="bk-city-badge">Marrakech</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Targa</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Targa+Marrakech" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="tanger">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipN8q1TXHJ1nyzEhh3JbITeV2azqGvFoo3iceM3j=s1360-w1360-h1020-rw" alt="BK T-Relais">
+            <span class="bk-city-badge">Tanger</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK T-Relais</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Relais+Tanger" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="sale">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzqFp-czlzB3LfdUi9TsWEudzEFhN836zqEGy9Bb0kxDpYsZvayzuQPw3LlhuIysFhXthQNCATqSMWR8qBSfDin4n_Yo1hn9nFxjF9UB5J0dBpiomhiLBm6oPl-qlCuqEoxnLmcnA=s1360-w1360-h1020-rw" alt="BK Marina Sale">
+            <span class="bk-city-badge">Sale</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Marina Sale</h5>
+            <a href="https://www.google.com/maps/search/?api=1&query=Burger+King+Marina+Sale" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="rabat">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSymR1nOMidlH_iIFLINzBjFLn5Pz7hC0hZHIuE7vAI7hjhgLMlWY62miTLp2ipTIemYoJkFXMgFtclB2A8WTEcJ6aElFGR8WIIw_KHh7nj-_AMs7Dq5Zu3tPYyNWTn68_wa-hI4hg=s1360-w1360-h1020-rw" alt="BK Zeir">
+            <span class="bk-city-badge">Rabat</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Zeir</h5>
+            <a href="https://maps.google.com/?cid=5053063941285547595&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="bouskoura">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOhwoYntOHvTuqvWI4QHwR07GwkIYm662yK6Ih7=s1360-w1360-h1020-rw" alt="BK El bayda">
+            <span class="bk-city-badge">Bouskoura</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK El bayda</h5>
+            <a href="https://maps.google.com/?cid=6188164560315410586&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="temara">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipPeIyhX3iIjkwSoP9ohwOegnLA0mXjX-0aU5HsB=s1360-w1360-h1020-rw" alt="BK Temara">
+            <span class="bk-city-badge">Temara</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Temara</h5>
+            <a href="https://maps.google.com/?cid=9671043660605583522&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipN14oz7ECq4l4p2oTi4z2QlaqqR4CvS20zO7rIN=s1360-w1360-h1020-rw" alt="BK 2 M-ars">
+            <span class="bk-city-badge">Casablanca</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK 2 M-ars</h5>
+            <a href="https://maps.google.com/?cid=4978829095134655814&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="sale">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyxWQeVCdNSs_opYmZxIt9TmJdbpTPjF3oB93ETIoBfnFRu6dA_8AXS0kmTg-8lkglXfLYmoyoMvJ7mYPHTAw4aJSXB0RkhySwk4CIDW9wnrWpm6F_uunLPJCh_V8966g-Tmf65=s1360-w1360-h1020-rw" alt="BK Carrefour Sale">
+            <span class="bk-city-badge">Sale</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Carrefour Sale</h5>
+            <a href="https://maps.google.com/?cid=2062820556223287663&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOYKz_VIV3PAtZ-4E_lpVetbrQGSolQt4s74eUr=s1360-w1360-h1020-rw" alt="BK Essalama">
+            <span class="bk-city-badge">Casablanca</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Essalama</h5>
+            <a href="https://maps.google.com/?cid=11115106659344691605&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOeTWygrNkcrsqdHIRqcilZcZiQLQrYR2kLKYjl=s1360-w1360-h1020-rw" alt="BK Area Mall">
+            <span class="bk-city-badge">Casablanca</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Area Mall</h5>
+            <a href="https://maps.google.com/?cid=7729579820163878227&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="marrakech">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwRdgScCuZph44C5wHJmRDg5-bQM33Di3zsMdJTtopG9dGZren8bpbiEpYgW_16oBKHzydPMxgmrLMUJ-GpllPfSVK3bAbs7ZVim_TWx3vbWn-9rLSVh-ch7aLiCjt1uJJVi1M5=s1360-w1360-h1020-rw" alt="BK Ola Marrakech">
+            <span class="bk-city-badge">Marrakech</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Ola Marrakech</h5>
+            <a href="https://maps.google.com/?cid=9332389655926529210&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="sale">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipNQno1ZVkvhFP-mXOGzY8B2uTwmnXCwzDXg1fg=s1360-w1360-h1020-rw" alt="BK Sale bouregreg">
+            <span class="bk-city-badge">Sale</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Sale bouregreg</h5>
+            <a href="https://maps.google.com/?cid=8941685393575122636&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="settat">
+    <div class="bk-premium-card">
+        <div class="bk-card-img-wrapper">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzVKb8ZLFr99YtqVnPSGkA4fWA78jX5MiZK3nT1KbE6KQEHHHGkdlm5Hcp3bYN0QvZD9wNLTcF8tpmhmj-eXcFpISKzRSuJLgCEfmQ3d6FlyW3xqagB0Hu75AlPdS_PksffAfGwyA=s1360-w1360-h1020-rw" alt="BK Settat">
+            <span class="bk-city-badge">Settat</span>
+        </div>
+        <div class="bk-card-info">
+            <h5>BK Settat</h5>
+            <a href="https://maps.google.com/?cid=2098380844733428672&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="bk-location-btn">
+                <span>Y aller</span> <i class="fas fa-location-arrow"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+                    </div>
+                    <div class="text-center mt-4">
+    <button id="showMoreBtn" class="btn btn-primary">Show More</button>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Start -->
+                <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
+                        <a class="btn btn-link" href="about.html">About Us</a>
+                        <a class="btn btn-link" href="about.html">Contact Us</a>
+                        <a class="btn btn-link" href="menu.html">Menu</a>
+                        <a class="btn btn-link" href="about.html">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Boulevard Zerktouni Twin Center Tour Ouest, Casablanca 20100</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>05227-96638</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
+                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
+                        <p>09AM - 09PM</p>
+                        <h5 class="text-light fw-normal">Sunday</h5>
+                        <p>10AM - 08PM</p>
+                    </div> -->
+                      <div class="col-lg-4 col-md-6">
+                    <form id="newsletterForm" action="submti" method="POST">
+                            <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
+                            <p>Hungry for great deals? Subscribe to our newsletter for exclusive offers, promotions!</p>
+                            <div class="position-relative mx-auto" style="max-width: 400px;">
+                                <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="email" name="email" placeholder="Your email" required>
+                                <button type="submit" name="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            </div>
+                    </form>
+                    </div>
+                    
+<script>document.getElementById("newsletterForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop form from redirecting
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const url = "https://script.google.com/macros/s/AKfycbw0e86g6UDVLISw1gwPBZ6tiX4CN_IFjVcNsToAhzDYPEMz32GXbfjv56gQqKdqbsHp/exec";
+
+    // Send the form data to the Apps Script URL
+    fetch(url, {
+        method: "POST",
+        body: formData,
+    })
+    .then(response => response.text()) // Parse response as plain text
+    .then(data => {
+        if (data.trim() === "Success") {
+            // Show a custom pop-up with the success message
+            showCustomPopup("Thank you for subscribing!");
+        } else {
+            // Show a custom pop-up with the error message
+            showCustomPopup("An error occurred: " + data);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        // Show a custom pop-up with the error details
+        showCustomPopup("An error occurred. Please try again.");
+    });
+});
+
+// Function to display a creative custom pop-up
+function showCustomPopup(message) {
+    // Create the overlay background
+    const overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    overlay.style.zIndex = "999";
+    overlay.style.display = "flex";
+    overlay.style.justifyContent = "center";
+    overlay.style.alignItems = "center";
+
+    // Create the pop-up container
+    const popup = document.createElement("div");
+    popup.style.position = "relative";
+    popup.style.width = "300px";
+    popup.style.padding = "20px";
+    popup.style.backgroundColor = "#fff";
+    popup.style.borderRadius = "10px";
+    popup.style.textAlign = "center";
+    popup.style.boxShadow = "0px 4px 20px rgba(0, 0, 0, 0.2)";
+    popup.style.animation = "fadeIn 0.5s ease-out";
+
+    // Add the message to the pop-up
+    const messageText = document.createElement("p");
+    messageText.textContent = message;
+    messageText.style.margin = "0";
+    messageText.style.fontSize = "18px";
+    messageText.style.color = "#333";
+    messageText.style.fontWeight = "bold";
+    popup.appendChild(messageText);
+
+    // Add a success/checkmark icon
+    const icon = document.createElement("div");
+    icon.innerHTML = "✔️";
+    icon.style.fontSize = "40px";
+    icon.style.marginTop = "10px";
+    icon.style.color = "#28a745";
+    popup.prepend(icon);
+
+    // Append the pop-up to the overlay
+    overlay.appendChild(popup);
+
+    // Append the overlay to the body
+    document.body.appendChild(overlay);
+
+    // Keyframes for fade-in animation
+    const style = document.createElement("style");
+    style.textContent = `
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Automatically remove the pop-up after 2 seconds
+    setTimeout(() => {
+        document.body.removeChild(overlay); // Remove the overlay and pop-up
+    }, 2000); // 2000ms = 2 seconds
+}
+</script>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">General First Food</a>, All Right Reserved. 
+							 
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+         
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+<script>
+  // Sélectionne tous les boutons avec la classe .bk-btn
+  const filterButtons = document.querySelectorAll('.bk-btn');
+
+  // Sélectionne toutes les cartes de restaurant
+  const restaurantCards = document.querySelectorAll('.restaurant-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Gérer l'effet actif (mise en surbrillance)
+      filterButtons.forEach(b => b.classList.remove('active'));
+      button.classList.add('active');
+
+      // Récupérer la ville sélectionnée et la normaliser en minuscules
+      const selectedCity = button.getAttribute('data-city').toLowerCase();
+
+      // Affiche ou masque les cartes en fonction de la ville
+      restaurantCards.forEach(card => {
+        const cardCity = card.getAttribute('data-city').toLowerCase();
+        if (selectedCity === 'all' || selectedCity === cardCity) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+          observer.unobserve(entry.target); // si tu veux que ça se joue qu'une seule fois
+        }
+      });
+    }, {
+      threshold: 0.1 // déclenche à 10% visible
+    });
+  
+    document.querySelectorAll('.restaurant-card').forEach(card => {
+      card.style.opacity = 0; // pour cacher avant l'animation
+      observer.observe(card);
+    });
+  </script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([31.7917, -7.0926], 6.5);
+
+    // Carte OpenStreetMap (gratuite)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Icône personnalisée Burger King
+    const bkIcon = L.icon({
+      iconUrl: 'img/map_icon.png',
+      iconSize: [50, 50],
+      iconAnchor: [25, 50],
+      popupAnchor: [0, -50]
+    });
+
+    // Liste des restaurants
+    const locations = [
+      { name: "BK Morocco Mall", lat: 33.5806, lng: -7.6918 },
+      { name: "BK Kitea Geant", lat: 33.5372, lng: -7.6422 },
+      { name: "BK Anfa Place", lat: 33.5929, lng: -7.6427 },
+      { name: "BK Borj Fez", lat: 34.0414, lng: -5.0063 },
+      { name: "BK Agdal Rabat", lat: 34.0036, lng: -6.8465 },
+      { name: "BK Maarif", lat: 33.5866, lng: -7.6322 },
+      { name: "BK Carre Eden", lat: 31.631, lng: -8.0087 },
+      { name: "BK Al Jazira", lat: 33.5898, lng: -7.6286 },
+      { name: "BK Tanger City Center", lat: 35.7732, lng: -5.7999 },
+      { name: "BK Al Mazar", lat: 31.5882, lng: -7.9815 },
+      { name: "BK Exit Casa", lat: 33.549, lng: -7.6614 },
+      { name: "BK Sidi Maarouf", lat: 33.5422, lng: -7.6197 },
+      { name: "BK Socco Alto", lat: 35.7431, lng: -5.8345 },
+      { name: "BK Lafayette", lat: 33.5892, lng: -7.6187 },
+      { name: "BK Beni Mellal", lat: 32.3429, lng: -6.3633 },
+      { name: "BK El Jadida", lat: 33.2333, lng: -8.5 },
+      { name: "BK Arribat Center", lat: 34.0005, lng: -6.836 },
+      { name: "BK Menara Mall", lat: 31.618, lng: -8.006 },
+      { name: "BK Laaraache", lat: 35.1987, lng: -6.1517 },
+      { name: "BK Ibn Battouta", lat: 35.7562, lng: -5.8328 },
+      { name: "BK Targa", lat: 31.6556, lng: -8.0545 },
+      { name: "BK T-Relais", lat: 35.6739, lng: -5.9 },
+      { name: "BK Marina Sale", lat: 34.0321, lng: -6.8293 },
+      { name: "BK Zeir", lat: 33.6, lng: -6.2167 },
+      { name: "BK El Bayda", lat: 32.25, lng: -6.37 },
+      { name: "BK Temara", lat: 33.9245, lng: -6.9094 },
+      { name: "BK 2 M-ars", lat: 33.5723, lng: -7.6312 },
+      { name: "BK Carrefour Sale", lat: 34.0512, lng: -6.7702 },
+      { name: "BK Essalama", lat: 30.4113, lng: -9.5375 },
+      { name: "BK Area Mall", lat: 30.4225, lng: -9.5989 },
+      { name: "BK Ola Marrakech", lat: 31.6335, lng: -8.0201 },
+      { name: "BK Sale Bouregreg", lat: 34.036, lng: -6.8276 },
+      { name: "BK Settat", lat: 33.0022, lng: -7.62 },
+    ];
+
+    // Ajouter les marqueurs sur la carte
+    locations.forEach(loc => {
+      L.marker([loc.lat, loc.lng], { icon: bkIcon })
+        .addTo(map)
+        .bindPopup(`<strong>${loc.name}</strong>`);
+    });
+  </script>
+
+
+  <!-- Google Maps API with callback to initMap -->
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxN43WAg0VzFbD1jdgb_IqjAuaxaYmyPU&callback=initMap">
+  </script>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+
+
+<script>
+(function () {
+  if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+    window.chatbase = (...arguments) => {
+      if (!window.chatbase.q) {
+        window.chatbase.q = [];
+      }
+      window.chatbase.q.push(arguments);
+    };
+    window.chatbase = new Proxy(window.chatbase, {
+      get(target, prop) {
+        if (prop === "q") return target.q;
+        return (...args) => target(prop, ...args);
+      },
+    });
+  }
+
+  const onLoad = function () {
+    const script = document.createElement("script");
+    script.src = "https://www.chatbase.co/embed.min.js";
+    script.id = "CxLa0vzvBNle0F7Z67IAS";
+    script.setAttribute("domain", "www.chatbase.co");
+    document.body.appendChild(script);
+
+    window.chatbase('setConfig', {
+      widget: {
+        showDefaultLauncher: false
+      }
+    });
+  };
+
+  if (document.readyState === "complete") {
+    onLoad();
+  } else {
+    window.addEventListener("load", onLoad);
+  }
+})();
+</script>
+<script>
+  const allCards = document.querySelectorAll('.restaurant-card');
+  const showMoreBtn = document.getElementById('showMoreBtn');
+  const cardsPerPage = 8; // 2 lines of 4 cards
+  let visibleCount = cardsPerPage;
+
+  function updateVisibleCards(city = "all") {
+    let count = 0;
+    let totalVisible = 0;
+
+    allCards.forEach(card => {
+      const cardCity = card.getAttribute("data-city").toLowerCase();
+      const matchesFilter = city === "all" || cardCity === city;
+
+      if (matchesFilter) {
+        totalVisible++;
+        if (count < visibleCount) {
+          card.style.display = "block";
+          count++;
+        } else {
+          card.style.display = "none";
+        }
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    showMoreBtn.style.display = visibleCount >= totalVisible ? "none" : "inline-block";
+  }
+
+  // Initial load
+  updateVisibleCards();
+
+  // Filter buttons logic
+  document.querySelectorAll('.bk-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.bk-btn').forEach(b => b.classList.remove('active'));
+      button.classList.add('active');
+      visibleCount = cardsPerPage;
+      updateVisibleCards(button.getAttribute("data-city").toLowerCase());
+    });
+  });
+
+  // Show More button
+  showMoreBtn.addEventListener("click", () => {
+    visibleCount += cardsPerPage;
+    const activeBtn = document.querySelector(".bk-btn.active") || { getAttribute: () => "all" };
+    updateVisibleCards(activeBtn.getAttribute("data-city").toLowerCase());
+  });
+</script>
+
+</body>
+
+<style>
+/* Hide all cards initially */
+.restaurant-card {
+    display: none;
+}
+/* --- BK Premium Card Styles --- */
+:root {
+    --bk-red: #DA291C;
+    --bk-orange: #F58025;
+    --bk-brown: #502314;
+    --bk-offwhite: #FDFBF7;
+}
+
+/* 1. The Card Container */
+.bk-premium-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0,0,0,0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover Effect: Lift & Glow */
+.bk-premium-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(245, 128, 37, 0.2);
+    border-color: rgba(245, 128, 37, 0.3);
+}
+
+/* 2. Image Area */
+.bk-card-img-wrapper {
+    position: relative;
+    height: 200px; /* Fixed height for consistency */
+    overflow: hidden;
+}
+
+.bk-card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers area without stretching */
+    transition: transform 0.6s ease;
+}
+
+/* Zoom Image on Hover */
+.bk-premium-card:hover .bk-card-img-wrapper img {
+    transform: scale(1.1);
+}
+
+/* 3. The City Badge */
+.bk-city-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--bk-brown);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 2;
+}
+
+/* Blinking dot in badge */
+.bk-city-badge::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #0c4f16;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+/* 4. Card Content */
+.bk-card-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    background: #fff;
+}
+
+/* Decorative Flame Line Gradient */
+.bk-card-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--bk-red), var(--bk-orange));
+    transition: width 0.4s ease;
+}
+
+.bk-premium-card:hover .bk-card-info::before {
+    width: 100%; /* Line expands on hover */
+}
+
+.bk-card-info h5 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: var(--bk-brown);
+    margin-bottom: 15px;
+    font-size: 1.15rem;
+}
+
+/* 5. The Button */
+.bk-location-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    background: #f4f4f4;
+    color: #333;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: auto;
+}
+.mt-5{ 
+    margin-top: 0px !important;
+}
+.bk-location-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--bk-red), var(--bk-orange));
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.bk-premium-card:hover .bk-location-btn {
+    color: white;
+    background: transparent;
+    box-shadow: 0 5px 15px rgba(218, 41, 28, 0.3);
+}
+
+.bk-premium-card:hover .bk-location-btn::before {
+    width: 100%;
+}
+
+.bk-location-btn i {
+    transition: transform 0.3s ease;
+}
+
+.bk-premium-card:hover .bk-location-btn i {
+    transform: rotate(45deg);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(218, 41, 28, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(218, 41, 28, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(218, 41, 28, 0); }
+}
+/* Desktop: 8 cards per row (width = 12.5%) */
+@media (min-width: 992px) {
+    .col-lg-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+}
+body{
+          font-family: 'Open Sans', sans-serif;
+
+}
+/* Mobile: 6 cards per row (width = 16.66%) */
+@media (max-width: 767.98px) {
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+.restaurant-card {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.restaurant-card[style*="display: block"] {
+    opacity: 1;
+}
+
+
+        #map {
+      height: 80vh;
+      width: 80%;
+    }
+    
+        /* BK Astro Neon Card Enhancements */
+        .restaurant-card { perspective: 1200px; }
+
+        .bk-card {
+            position: relative;
+            border-radius: 28px;
+            background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(80,35,20,0.06);
+            transform-style: preserve-3d;
+            transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s, filter .5s;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .bk-card:hover {
+            transform: translateY(-14px) rotateX(4deg) scale(1.02);
+            box-shadow: 0 35px 60px rgba(245, 128, 37, 0.25);
+            filter: saturate(110%);
+        }
+
+        /* Neon radial glow ring */
+        .bk-card::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            background: conic-gradient(
+                from 180deg at 50% 50%,
+                rgba(218,41,28,.25),
+                rgba(245,128,37,.25),
+                rgba(255,183,77,.25),
+                rgba(218,41,28,.25)
+            );
+            filter: blur(14px);
+            z-index: 0;
+            pointer-events: none;
+            opacity: .9;
+            transition: transform .8s ease, filter .5s ease, opacity .5s ease;
+            transform: translateZ(-1px);
+        }
+
+        .bk-card:hover::before {
+            filter: blur(18px);
+            opacity: 1;
+        }
+
+        .card-img-wrap {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .8s cubic-bezier(.2,.8,.2,1), filter .5s;
+            will-change: transform;
+        }
+
+        .bk-card:hover .card-img-wrap img {
+            transform: scale(1.12) translateY(-6px);
+            filter: contrast(105%) saturate(110%);
+        }
+
+        /* Subtle shine overlay on image */
+        .card-img-wrap::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(0,0,0,.0) 50%, rgba(0,0,0,.08) 100%),
+                linear-gradient(120deg, rgba(255,255,255,.0) 40%, rgba(255,255,255,.25) 60%, rgba(255,255,255,.0) 70%);
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+
+        /* City ribbon */
+        .city-tag {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            padding: 6px 12px;
+            border-radius: 18px;
+            font-weight: 800;
+            font-size: .8rem;
+            letter-spacing: .03em;
+            color: #fff;
+            background: linear-gradient(135deg, var(--bk-red), var(--bk-orange));
+            box-shadow: 0 10px 20px rgba(245,128,37,.35);
+            text-transform: uppercase;
+        }
+
+        /* Glassy status badge */
+        .status-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-weight: 700;
+            background: rgba(255,255,255,.85);
+            border: 1px solid rgba(255,255,255,.6);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 18px rgba(0,0,0,.08);
+            color: #333;
+        }
+
+        .status-badge .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2ecc71;
+            box-shadow: 0 0 0 0 rgba(46, 204, 113, .7);
+            animation: pulse 2s infinite;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+            padding: 22px 22px 24px;
+            text-align: center;
+            background: linear-gradient(180deg, #ffffff 0%, #f9f7f4 100%);
+        }
+
+        .bk-title {
+            font-weight: 900;
+            font-size: 1.15rem;
+            color: var(--bk-brown);
+            letter-spacing: .02em;
+            text-transform: uppercase;
+        }
+
+        .bk-address {
+            display: block;
+            margin-top: 6px;
+            color: rgba(80,35,20,.65);
+            font-weight: 600;
+        }
+
+        /* Premium CTA */
+        .btn-navigate {
+            margin-top: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 800;
+            color: var(--bk-brown);
+            background: #fff;
+            border: 2px solid rgba(218,41,28,.25);
+            box-shadow: 0 8px 16px rgba(0,0,0,.06);
+            transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+            text-decoration: none;
+        }
+
+        .btn-navigate:hover {
+            transform: translateY(-3px);
+            color: #fff;
+            background: linear-gradient(135deg, var(--bk-red), var(--bk-orange));
+            box-shadow: 0 14px 24px rgba(245,128,37,.35);
+            border-color: transparent;
+        }
+
+        .btn-navigate i {
+            transition: transform .25s ease;
+        }
+
+        .btn-navigate:hover i {
+            transform: translateX(4px);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, .7); }
+            70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+        }
+    
+</style>
+
+<style>
+
+    .bk-carousel {
+  background: #fff7e6;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bk-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.bk-btn {
+  flex-shrink: 0;
+  margin: 0 6px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+  background: linear-gradient(145deg, #ffe082, #f44336);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 87, 34, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  scroll-snap-align: center;
+}
+
+.bk-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(255, 87, 34, 0.3);
+}
+
+.bk-btn.active {
+  background: linear-gradient(145deg, #f44336, #d32f2f);
+}
+
+
+
+
+
+  .chatbase-container {
+    max-width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .chatbase-iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    min-height: 700px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .chatbase-iframe {
+      min-height: 600px;
+      border-radius: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .chatbase-iframe {
+      min-height: 550px;
+    }
+  }
+</style>
+</html>

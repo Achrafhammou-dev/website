@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BK Morocco</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+                    <!--  -->
+                    <img src="img/logo.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                    <!--<a href="service.html" class="nav-item nav-link">Service</a>-->
+                        <a href="menu.html" class="nav-item nav-link">Menu</a>
+                        <!-- <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="booking.html" class="dropdown-item">Booking</a>
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            </div>
+                        </div> -->
+                        <a href="Restaurants.html" class="nav-item nav-link active">Restaurants</a>
+                    </div>
+                     
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white-seconds mb-3 animated slideInDown">Where To Find Us!</h1>
+                    <nav aria-label="breadcrumb">
+                        <!-- <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                        </ol> -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+
+        <div class="container-xxl pt-5 pb-3">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
+<!-- :                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Team Members</h5> -->
+                    <h1 class="mb-5">We are In!</h1>
+
+                    <div id="map" style="height: 500px; width: 100%;"></div>
+
+
+                </div>        
+            </div>
+        <!-- Seats Start -->
+        <div class="container-xxl pt-5 pb-3">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.4s">
+<!-- :                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Team Members</h5> -->
+                    <h1 class="mb-5">Our Restaurants</h1>
+                </div>
+
+
+                <div class="container mb-5">
+                    <div class="filter-carousel d-flex flex-nowrap overflow-auto px-3 py-2 rounded shadow-sm">
+                        <button class="btn btn-outline-primary m-1 flex-shrink-0 filter-btn" data-city="all">Tous</button>
+                        <button class="btn btn-outline-primary m-1 flex-shrink-0 filter-btn" data-city="Casablanca">Casablanca</button>
+                        <button class="btn btn-outline-primary m-1 flex-shrink-0 filter-btn" data-city="rabat">Rabat</button>
+                        <button class="btn btn-outline-primary m-1 flex-shrink-0 filter-btn" data-city="tanger">Tanger</button>
+                        <button class="btn btn-outline-primary m-1 flex-shrink-0 filter-btn" data-city="jadida">El Jadida</button>
+                        <button class="btn btn-outline-primary m-1 flex-shrink-0 filter-btn" data-city="Agadir">Agadir</button>
+                        <button class="btn btn-outline-primary m-1 flex-shrink-0 filter-btn" data-city="tetouan">Tétouan</button>
+                        <button class="btn btn-outline-primary m-1 flex-shrink-0 filter-btn" data-city="fes">Fès</button>
+                        
+                        
+                        <!-- Add more cities if needed -->
+                    </div>
+                </div>
+                
+
+                    <div class="row g-4">
+                        <!-- BK Rabat -->
+                        <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="rabat">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <div class="rounded-circle overflow-hidden m-4">
+                                    <img class="img-fluid" src="img/agdal.png" alt="BK Rabat">
+                                </div>
+                                <h5 class="mb-0">BK Rabat</h5>
+                                <small>Rabat</small>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Rabat/@34.0208821,-6.8416505,17z/data=!3m1!4b1!4m6!3m5!1s0xda76c5bbaed6c35:0xe5a2c6baff5cf1bd!8m2!3d34.0208777!4d-6.8390756!16s%2Fg%2F11c5j_8z8v?entry=ttu"><i class="fas fa-map-marker-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- BK Tanger -->
+                        <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="tanger">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <div class="rounded-circle overflow-hidden m-4">
+                                    <img class="img-fluid" src="img/tanger.png" alt="BK Tanger">
+                                </div>
+                                <h5 class="mb-0">BK Tanger</h5>
+                                <small>Tanger</small>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+-+Tanger+City+Center/@35.7732279,-5.7889798,17z/data=!3m1!4b1!4m6!3m5!1s0xd0b813d38adcbb9:0x7bd08b90ccce5927!8m2!3d35.7732236!4d-5.7864049!16s%2Fg%2F11lh4_fcmc?entry=ttu"><i class="fas fa-map-marker-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- BK Ain Sebaa -->
+                        <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="Casablanca">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <div class="rounded-circle overflow-hidden m-4">
+                                    <img class="img-fluid" src="img/ainsebaa.png" alt="BK Ain Sebaa">
+                                </div>
+                                <h5 class="mb-0">BK Ain Sebaa</h5>
+                                <small>Casablanca</small>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Ain+Sebaa/@33.6049529,-7.5306737,17z/data=!3m1!4b1!4m6!3m5!1s0xd0b80363f0e7991:0x567c3e4aebfba5e2!8m2!3d33.6049484!4d-7.5280988!16s%2Fg%2F11c3s6b8h4?entry=ttu"><i class="fas fa-map-marker-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- BK 2 Mars -->
+                        <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="Casablanca">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <div class="rounded-circle overflow-hidden m-4">
+                                    <img class="img-fluid" src="img/2mars.png" alt="BK 2 Mars">
+                                </div>
+                                <h5 class="mb-0">BK 2 Mars</h5>
+                                <small>Casablanca</small>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+2+Mars/@33.5829168,-7.6203421,17z/data=!3m1!4b1!4m6!3m5!1s0xd0b80c6d3b1e789:0x8d62c0bf8fd2ec8a!8m2!3d33.5829123!4d-7.6177672!16s%2Fg%2F11c60mv3zz?entry=ttu"><i class="fas fa-map-marker-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="Casablanca">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <div class="rounded-circle overflow-hidden m-4">
+                                    <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Morocco Mall">
+                                </div>
+                                <h5 class="mb-0">BK Morocco Mall</h5>
+                                <small>Casablanca</small>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Morocco+Mall/"><i class="fas fa-map-marker-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- BK Anfaplace -->
+                        <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="Casablanca">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <div class="rounded-circle overflow-hidden m-4">
+                                    <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Anfaplace">
+                                </div>
+                                <h5 class="mb-0">BK Anfaplace</h5>
+                                <small>Casablanca</small>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Anfaplace/"><i class="fas fa-map-marker-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- BK Hay Riad -->
+                        <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="rabat">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <div class="rounded-circle overflow-hidden m-4">
+                                    <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Hay Riad">
+                                </div>
+                                <h5 class="mb-0">BK Hay Riad</h5>
+                                <small>Rabat</small>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Hay+Riad/"><i class="fas fa-map-marker-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- BK Fès -->
+                        <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="fes">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <div class="rounded-circle overflow-hidden m-4">
+                                    <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Fès">
+                                </div>
+                                <h5 class="mb-0">BK Fès</h5>
+                                <small>Fès</small>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Fes/"><i class="fas fa-map-marker-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- BK Agadir -->
+                        <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="agadir">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <div class="rounded-circle overflow-hidden m-4">
+                                    <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Agadir">
+                                </div>
+                                <h5 class="mb-0">BK Agadir</h5>
+                                <small>Agadir</small>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Agadir/"><i class="fas fa-map-marker-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- BK Marrakech -->
+                        <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="fes">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <div class="rounded-circle overflow-hidden m-4">
+                                    <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Marrakech">
+                                </div>
+                                <h5 class="mb-0">BK Marrakech</h5>
+                                <small>Marrakech</small>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Marrakech/"><i class="fas fa-map-marker-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- BK El Jadida -->
+                        <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="jadida">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <div class="rounded-circle overflow-hidden m-4">
+                                    <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK El Jadida">
+                                </div>
+                                <h5 class="mb-0">BK El Jadida</h5>
+                                <small>El Jadida</small>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+El+Jadida/"><i class="fas fa-map-marker-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- BK Oujda -->
+                        <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="tetouan">
+                            <div class="team-item text-center rounded overflow-hidden">
+                                <div class="rounded-circle overflow-hidden m-4">
+                                    <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Oujda">
+                                </div>
+                                <h5 class="mb-0">BK tetouan</h5>
+                                <small>Oujda</small>
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Oujda/"><i class="fas fa-map-marker-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    
+
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="img/team-2.jpg" alt="">
+                            </div>
+                            <h5 class="mb-0">Full Name</h5>
+                            <small>Designation</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="fes" data-wow-delay="0.3s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="img/team-3.jpg" alt="">
+                            </div>
+                            <h5 class="mb-0">Full Name</h5>
+                            <small>Designation</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="fes" data-wow-delay="0.5s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                            </div>
+                            <h5 class="mb-0">Full Name</h5>
+                            <small>Designation</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card"  data-city="fes" data-wow-delay="0.7s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class="rounded-circle overflow-hidden m-4">
+                                <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            </div>
+                            <h5 class="mb-0">Full Name</h5>
+                            <small>Designation</small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+ <!-- Seats Start -->
+        <!-- Footer Start -->
+                <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="menu.html">Menu</a>
+                        <a class="btn btn-link" href="">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Boulevard Zerktouni Twin Center Tour Ouest, Casablanca 20100</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>05227-96638</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
+                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
+                        <p>09AM - 09PM</p>
+                        <h5 class="text-light fw-normal">Sunday</h5>
+                        <p>10AM - 08PM</p>
+                    </div> -->
+                      <div class="col-lg-4 col-md-6">
+                    <form id="newsletterForm" action="submti" method="POST">
+                            <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
+                            <p>Hungry for great deals? Subscribe to our newsletter for exclusive offers, promotions!</p>
+                            <div class="position-relative mx-auto" style="max-width: 400px;">
+                                <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="email" name="email" placeholder="Your email" required>
+                                <button type="submit" name="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            </div>
+                    </form>
+                    </div>
+                    
+<script>document.getElementById("newsletterForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop form from redirecting
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const url = "https://script.google.com/macros/s/AKfycbw0e86g6UDVLISw1gwPBZ6tiX4CN_IFjVcNsToAhzDYPEMz32GXbfjv56gQqKdqbsHp/exec";
+
+    // Send the form data to the Apps Script URL
+    fetch(url, {
+        method: "POST",
+        body: formData,
+    })
+    .then(response => response.text()) // Parse response as plain text
+    .then(data => {
+        if (data.trim() === "Success") {
+            // Show a custom pop-up with the success message
+            showCustomPopup("Thank you for subscribing!");
+        } else {
+            // Show a custom pop-up with the error message
+            showCustomPopup("An error occurred: " + data);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        // Show a custom pop-up with the error details
+        showCustomPopup("An error occurred. Please try again.");
+    });
+});
+
+// Function to display a creative custom pop-up
+function showCustomPopup(message) {
+    // Create the overlay background
+    const overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    overlay.style.zIndex = "999";
+    overlay.style.display = "flex";
+    overlay.style.justifyContent = "center";
+    overlay.style.alignItems = "center";
+
+    // Create the pop-up container
+    const popup = document.createElement("div");
+    popup.style.position = "relative";
+    popup.style.width = "300px";
+    popup.style.padding = "20px";
+    popup.style.backgroundColor = "#fff";
+    popup.style.borderRadius = "10px";
+    popup.style.textAlign = "center";
+    popup.style.boxShadow = "0px 4px 20px rgba(0, 0, 0, 0.2)";
+    popup.style.animation = "fadeIn 0.5s ease-out";
+
+    // Add the message to the pop-up
+    const messageText = document.createElement("p");
+    messageText.textContent = message;
+    messageText.style.margin = "0";
+    messageText.style.fontSize = "18px";
+    messageText.style.color = "#333";
+    messageText.style.fontWeight = "bold";
+    popup.appendChild(messageText);
+
+    // Add a success/checkmark icon
+    const icon = document.createElement("div");
+    icon.innerHTML = "✔️";
+    icon.style.fontSize = "40px";
+    icon.style.marginTop = "10px";
+    icon.style.color = "#28a745";
+    popup.prepend(icon);
+
+    // Append the pop-up to the overlay
+    overlay.appendChild(popup);
+
+    // Append the overlay to the body
+    document.body.appendChild(overlay);
+
+    // Keyframes for fade-in animation
+    const style = document.createElement("style");
+    style.textContent = `
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Automatically remove the pop-up after 2 seconds
+    setTimeout(() => {
+        document.body.removeChild(overlay); // Remove the overlay and pop-up
+    }, 2000); // 2000ms = 2 seconds
+}
+</script>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">General First Food</a>, All Right Reserved. 
+							 
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+         
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
+    <script>
+        // Sélectionne tous les boutons de filtre
+        const filterButtons = document.querySelectorAll(".filter-btn");
+      
+        // Sélectionne toutes les cartes de restaurant
+        const restaurantCards = document.querySelectorAll(".restaurant-card");
+      
+        filterButtons.forEach(button => {
+          button.addEventListener("click", () => {
+            const city = button.getAttribute("data-city");
+      
+            restaurantCards.forEach(card => {
+              const cardCity = card.getAttribute("data-city");
+      
+              // Affiche ou cache les cartes selon la ville
+              if (city === "all" || city === cardCity) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+      </script>
+
+
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+          observer.unobserve(entry.target); // si tu veux que ça se joue qu'une seule fois
+        }
+      });
+    }, {
+      threshold: 0.1 // déclenche à 10% visible
+    });
+  
+    document.querySelectorAll('.restaurant-card').forEach(card => {
+      card.style.opacity = 0; // pour cacher avant l'animation
+      observer.observe(card);
+    });
+  </script>
+
+
+
+<script>
+(function () {
+  if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+    window.chatbase = (...arguments) => {
+      if (!window.chatbase.q) {
+        window.chatbase.q = [];
+      }
+      window.chatbase.q.push(arguments);
+    };
+    window.chatbase = new Proxy(window.chatbase, {
+      get(target, prop) {
+        if (prop === "q") return target.q;
+        return (...args) => target(prop, ...args);
+      },
+    });
+  }
+
+  const onLoad = function () {
+    const script = document.createElement("script");
+    script.src = "https://www.chatbase.co/embed.min.js";
+    script.id = "CxLa0vzvBNle0F7Z67IAS";
+    script.setAttribute("domain", "www.chatbase.co");
+    document.body.appendChild(script);
+
+    window.chatbase('setConfig', {
+      widget: {
+        showDefaultLauncher: false
+      }
+    });
+  };
+
+  if (document.readyState === "complete") {
+    onLoad();
+  } else {
+    window.addEventListener("load", onLoad);
+  }
+})();
+</script>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+  var map = L.map('map').setView([31.6295, -7.9811], 6); // centre sur le Maroc
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap & CartoDB',
+  subdomains: 'abcd',
+  maxZoom: 19
+}).addTo(map);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  var restaurants = [
+    {name:"Burger King Morocco Mall (Casablanca)", lat:33.5904, lng:-7.6186},
+    {name:"Burger King Maarif (Casablanca)", lat:33.5899, lng:-7.6039},
+    {name:"Burger King Anfaplace (Casablanca)", lat:33.5298, lng:-7.6504},
+    {name:"Burger King Sidi Maârouf (Casablanca)", lat:33.5550, lng:-7.6228},
+    {name:"Burger King Tachfine Center (Casablanca)", lat:33.5810, lng:-7.6173},
+    {name:"Burger King Rabat Agdal", lat:34.0186, lng:-6.8396},
+    {name:"Burger King Marrakech Menara Mall", lat:31.6205, lng:-7.9897},
+    {name:"Burger King Marrakech Targa", lat:31.6422, lng:-8.0100},
+    {name:"Burger King Marrakech Sidi Bou Othmane", lat:31.5640, lng:-8.0640},
+    // ajoutez 11 autres basés sur des recherches (voir ci-dessous)
+  ];
+
+  restaurants.forEach(function(r) {
+    L.marker([r.lat, r.lng])
+      .addTo(map)
+      .bindPopup("<b>"+r.name+"</b>");
+  });
+</script>
+
+
+
+</body>
+<style>
+  .chatbase-container {
+    max-width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .chatbase-iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    min-height: 700px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .chatbase-iframe {
+      min-height: 600px;
+      border-radius: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .chatbase-iframe {
+      min-height: 550px;
+    }
+  }
+</style>
+</html>

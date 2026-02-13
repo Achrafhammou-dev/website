@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BK Morocco</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+                    <!--  -->
+                    <img src="img/logo.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                    <!--<a href="service.html" class="nav-item nav-link">Service</a>-->
+                        <a href="menu.html" class="nav-item nav-link">Menu</a>
+                        <!-- <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="booking.html" class="dropdown-item">Booking</a>
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            </div>
+                        </div> -->
+                        <a href="Restaurants.html" class="nav-item nav-link active">Restaurants</a>
+                    </div>
+                     
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white-seconds mb-3 animated slideInDown">Where To Find Us!</h1>
+                    <nav aria-label="breadcrumb">
+                        <!-- <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                        </ol> -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+
+        <div class="container-xxl pt-5 pb-3">
+            <!-- <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <h1 class="mb-5">We are In!</h1>
+
+                    <div id="map" style="height: 500px; width: 100%;"></div>
+
+
+                </div>        
+            </div> -->
+        <!-- Seats Start -->
+         
+                        <!-- <div id="map"></div> -->
+
+
+        <div class="container-xxl pt-5 pb-3">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.4s">
+                    <h1 class="mb-5">Our Restaurants</h1>
+                </div>
+
+
+
+                <div class="container mb-5">
+               <div class="filter-carousel d-flex flex-nowrap overflow-auto px-3 py-2 bk-carousel">
+  <button class="bk-btn" data-city="all">🍔 Tous</button>
+  <button class="bk-btn" data-city="casablanca">🏙️ Casablanca</button>
+  <button class="bk-btn" data-city="rabat">🏛️ Rabat</button>
+  <button class="bk-btn" data-city="tanger">🌊 Tanger</button>
+  <button class="bk-btn" data-city="el jadida">🏖️ El Jadida</button>
+  <button class="bk-btn" data-city="agadir">☀️ Agadir</button>
+  <button class="bk-btn" data-city="tetouan">🌄 Tétouan</button>
+  <button class="bk-btn" data-city="fes">🕌 Fès</button>
+  <button class="bk-btn" data-city="marrakech">🌴 Marrakech</button>
+  <button class="bk-btn" data-city="sale">🌁 Salé</button>
+  <button class="bk-btn" data-city="settat">🌾 Settat</button>
+  <button class="bk-btn" data-city="beni mellal">⛰️ Beni Mellal</button>
+  <button class="bk-btn" data-city="larache">🏝️ Larache</button>
+  <button class="bk-btn" data-city="temara">🏄‍♂️ Temara</button>
+  <button class="bk-btn" data-city="zeir">🌅 Zeir</button>
+  <button class="bk-btn" data-city="el bayda">🏜️ El Bayda</button>
+  <button class="bk-btn" data-city="mohammadia">🏖️ Mohammadia</button>
+</div>
+
+</div>
+
+                </div>
+                
+
+                    <div class="row g-4"  id="restaurant-cards">
+
+
+                        <!-- Burger King Morocco Restaurants Cards -->
+    <!-- Start of Cards -->
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://res.cloudinary.com/farouk/image/upload/t_meduim/oXOntOARf" alt="BK Morocco Mall">
+            </div>
+            <h5 class="mb-0">BK Morocco Mall</h5>
+            <small>Casablanca</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King/@33.5750736,-7.7081276,548m/data=!3m2!1e3!4b1!4m6!3m5!1s0xda7d4a33b9c33d7:0x8a364a7f3f4f0c85!8m2!3d33.5750736!4d-7.7081276!16s%2Fg%2F11g734wzyx?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYuEY90CtNrtoEBXS1MRbLNmguhfasrrQqPQ&s" alt="BK Kitea Geant">
+            </div>
+            <h5 class="mb-0">BK Kitea Geant</h5>
+            <small>Rabat</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+-+Kit%C3%A9a+Geant/@33.9558579,-6.8437156,545m/data=!3m2!1e3!4b1!4m6!3m5!1s0xda713513a77f4b9:0x75793757862f6434!8m2!3d33.9558579!4d-6.8411407!16s%2Fg%2F1hhlsb362?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="data:image/jpeg;base64,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" alt="BK Anfa Place">
+            </div>
+            <h5 class="mb-0">BK Anfa Place</h5>
+            <small>Casablanca</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps?sca_esv=0f3f3d91d2ee70a0&biw=1280&bih=551&output=search&q=burger+king++anfa+place&source=lnms&fbs=AIIjpHwRYWovL8tZMWN0SjIoRjFaiG-KPhlm3enA10TCQkym7SdhcKllN1omlCYYEAfKpyh5r_-hJK__sU4jDxoKmvSZVZaUBrrwR-Y-zwOPO_0QglHZa2sKothb_R9uE2BKiCy5CnldBoZ5V1Cwa558EYZE4qiLTYNVYPZDkhbY_wVPNYNvimuAL3lICoqn5pYGjgUBbbtroMG8uz68vS2ENcV6FvYFy8y6RI-McA73AbhnZqiuQSY&entry=mc&ved=1t:200715&ictx=111" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="fes">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="data:image/jpeg;base64,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" alt="BK Borj Fez">
+            </div>
+            <h5 class="mb-0">BK Borj Fez</h5>
+            <small>Fès</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps?sca_esv=0f3f3d91d2ee70a0&output=search&q=burger+king+borj+fez&source=lnms&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQ_pbg5bWizQs3A_kIenjtcglqFcXIGqDn9UMDOWdmf2Bo5clxNQwLqZ_UL32I9k9CjhYiL-P0JcK3VT2zAVXTbUe5pmOkb2H0w-t0FGWpqfXc7vVaiH2b59co4_8NBl7cagwuPXHGeSLNXnbMfvqb6s74Hv0aL2o7dDyJaeC6HuaJnD0Varbr07CcNG3kKkqXBNoKNg&entry=mc&ved=1t:200715&ictx=111" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="rabat">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/b9/04/4b/der-burger-king-agdal.jpg?w=1200&h=1200&s=1" alt="BK Agdal Rabat">
+            </div>
+            <h5 class="mb-0">BK Agdal Rabat</h5>
+            <small>Rabat</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps?sca_esv=0f3f3d91d2ee70a0&biw=1280&bih=551&output=search&q=burger+king+agdal&source=lnms&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQ_pbg5bWizQs3A_kIenjtcglqFcXIGqDn9UMDOWdmf2BDlV6wfgZTQ9mlBWKx7w8RYZ43CUJObinqsWVx8W9Bat0eFPow1ZUexLuUl-SoPXEoF9pabCw06sLvZW2hmOOkmGSzefKhOAO419rDY05u1xXO3l6G74e4_bg7lIzaFH3dgky7nz7_yeaH63W1AkpL3CgY2A&entry=mc&ved=1t:200715&ictx=111" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://res.cloudinary.com/farouk/image/upload/t_meduim/_c16TN_b3" alt="BK Maarif">
+            </div>
+            <h5 class="mb-0">BK Maarif</h5>
+            <small>Casablanca</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+-+Maarif/@33.5857345,-7.6399838,548m/data=!3m2!1e3!4b1!4m6!3m5!1s0xda7d2ea4b443f3f:0xc65655af51811d7f!8m2!3d33.5857301!4d-7.6374089!16s%2Fg%2F11bxflz02s?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="marrakech">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Carre Eden">
+            </div>
+            <h5 class="mb-0">BK Carre Eden</h5>
+            <small>Marrakech</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps?sca_esv=0f3f3d91d2ee70a0&output=search&q=burger+king+carre+eden&source=lnms&fbs=AIIjpHx4nJjfGojPVHhEACUHPiMQ3waWGf7F4TaqPQXdbNPKI9zYMOM1FcGvVBFdGmZIl1q88ke4RwE9K4wVbj0uRjQxcoRcVPHZEu2jiFbNB5PWrhFlTmx3wZeD9Fl6sbqFEhsyjNejYMyRFz2xZJ0Lny-rde7pmSii90v9ZhAHKvo2YIM28lkE3EIoVP6HfcraSdygJXR8B-MsTqSEm_kiRxvUfX3BPQ&entry=mc&ved=1t:200715&ictx=111" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Al Jazira">
+            </div>
+            <h5 class="mb-0">BK Al Jazira</h5>
+            <small>Casablanca</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Al+Jazira/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="tanger">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://res.cloudinary.com/farouk/image/upload/t_meduim/XLcO9d2qk" alt="BK Tanger City Center">
+            </div>
+            <h5 class="mb-0">BK Tanger City Center</h5>
+            <small>Tanger</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+-+Tanger+City+Center/@35.7732236,-5.7889798,533m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd0b813d38adcbb9:0x7bd08b90ccce5927!8m2!3d35.7732236!4d-5.7864049!16s%2Fg%2F11lh4_fcmc?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+&nbsp;
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="marrakech">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Al Mazar">
+            </div>
+            <h5 class="mb-0">BK Al Mazar</h5>
+            <small>Marrakech</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Al+Mazar/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Exit Casa">
+            </div>
+            <h5 class="mb-0">BK Exit Casa</h5>
+            <small>Casablanca</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Exit+Casa/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Sidi Maarouf">
+            </div>
+            <h5 class="mb-0">BK Sidi Maarouf</h5>
+            <small>Casablanca</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Sidi+Maarouf/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="tanger">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Socco Alto">
+            </div>
+            <h5 class="mb-0">BK Socco Alto</h5>
+            <small>Tanger</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Socco+Alto/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Lafayette">
+            </div>
+            <h5 class="mb-0">BK Lafayette</h5>
+            <small>Casablanca</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Lafayette+Casablanca/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="beni mellal">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Beni Mellal">
+            </div>
+            <h5 class="mb-0">BK Beni Mellal</h5>
+            <small>Beni Mellal</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Beni+Mellal/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="el jadida">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK El Jadida">
+            </div>
+            <h5 class="mb-0">BK El Jadida</h5>
+            <small>El Jadida</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+El+Jadida/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="rabat">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Arribat Center">
+            </div>
+            <h5 class="mb-0">BK Arribat Center</h5>
+            <small>Rabat</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Arribat+Center/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="marrakech">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Menara Mall">
+            </div>
+            <h5 class="mb-0">BK Menara Mall</h5>
+            <small>Marrakech</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Menara+Mall/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="larache">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Laaraache">
+            </div>
+            <h5 class="mb-0">BK Laaraache</h5>
+            <small>Larache</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Larache/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="tanger">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Ibn Battouta">
+            </div>
+            <h5 class="mb-0">BK Ibn Battouta</h5>
+            <small>Tanger</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Ibn+Battouta/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="marrakech">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Targa">
+            </div>
+            <h5 class="mb-0">BK Targa</h5>
+            <small>Marrakech</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Targa/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="tanger">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK T-Relais">
+            </div>
+            <h5 class="mb-0">BK T-Relais</h5>
+            <small>Tanger</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+T-Relais/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="sale">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Marina Sale">
+            </div>
+            <h5 class="mb-0">BK Marina Sale</h5>
+            <small>Salé</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Marina+Salé/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="zeir">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Zeir">
+            </div>
+            <h5 class="mb-0">BK Zeir</h5>
+            <small>Zeir</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Zeir/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="el bayda">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK El Bayda">
+            </div>
+            <h5 class="mb-0">BK El Bayda</h5>
+            <small>El Bayda</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+El+Bayda/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="temara">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Temara">
+            </div>
+            <h5 class="mb-0">BK Temara</h5>
+            <small>Temara</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Temara/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK 2 M-ars">
+            </div>
+            <h5 class="mb-0">BK 2 M-ars</h5>
+            <small>Casablanca</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+2+Mars/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="sale">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Carrefour Sale">
+            </div>
+            <h5 class="mb-0">BK Carrefour Sale</h5>
+            <small>Salé</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Carrefour+Salé/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Essalama">
+            </div>
+            <h5 class="mb-0">BK Essalama</h5>
+            <small>Agadir</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Essalama/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="casablanca">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Area Mall">
+            </div>
+            <h5 class="mb-0">BK Area Mall</h5>
+            <small>Agadir</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Area+Mall/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="marrakech">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Ola Marrakech">
+            </div>
+            <h5 class="mb-0">BK Ola Marrakech</h5>
+            <small>Marrakech</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Ola+Marrakech/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="sale">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Sale Bouregreg">
+            </div>
+            <h5 class="mb-0">BK Sale Bouregreg</h5>
+            <small>Salé</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Bouregreg+Salé/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 wow fadeInUp restaurant-card" data-city="settat">
+        <div class="team-item text-center rounded overflow-hidden">
+            <div class="rounded-circle overflow-hidden m-4">
+                <img class="img-fluid" src="https://i.pinimg.com/736x/ab/43/6f/ab436f9d78d6374178569b5263d8fb63.jpg" alt="BK Settat">
+            </div>
+            <h5 class="mb-0">BK Settat</h5>
+            <small>Settat</small>
+            <div class="d-flex justify-content-center mt-3">
+                <a class="btn btn-square btn-primary mx-1" href="https://www.google.com/maps/place/Burger+King+Settat/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+
+                    </div>
+                    <div class="text-center mt-4">
+    <button id="showMoreBtn" class="btn btn-primary">Show More</button>
+</div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Start -->
+                <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
+                        <a class="btn btn-link" href="about.html">About Us</a>
+                        <a class="btn btn-link" href="about.html">Contact Us</a>
+                        <a class="btn btn-link" href="menu.html">Menu</a>
+                        <a class="btn btn-link" href="about.html">Privacy Policy</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Boulevard Zerktouni Twin Center Tour Ouest, Casablanca 20100</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>05227-96638</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
+                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
+                        <p>09AM - 09PM</p>
+                        <h5 class="text-light fw-normal">Sunday</h5>
+                        <p>10AM - 08PM</p>
+                    </div> -->
+                      <div class="col-lg-4 col-md-6">
+                    <form id="newsletterForm" action="submti" method="POST">
+                            <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
+                            <p>Hungry for great deals? Subscribe to our newsletter for exclusive offers, promotions!</p>
+                            <div class="position-relative mx-auto" style="max-width: 400px;">
+                                <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="email" name="email" placeholder="Your email" required>
+                                <button type="submit" name="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            </div>
+                    </form>
+                    </div>
+                    
+<script>document.getElementById("newsletterForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop form from redirecting
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const url = "https://script.google.com/macros/s/AKfycbw0e86g6UDVLISw1gwPBZ6tiX4CN_IFjVcNsToAhzDYPEMz32GXbfjv56gQqKdqbsHp/exec";
+
+    // Send the form data to the Apps Script URL
+    fetch(url, {
+        method: "POST",
+        body: formData,
+    })
+    .then(response => response.text()) // Parse response as plain text
+    .then(data => {
+        if (data.trim() === "Success") {
+            // Show a custom pop-up with the success message
+            showCustomPopup("Thank you for subscribing!");
+        } else {
+            // Show a custom pop-up with the error message
+            showCustomPopup("An error occurred: " + data);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        // Show a custom pop-up with the error details
+        showCustomPopup("An error occurred. Please try again.");
+    });
+});
+
+// Function to display a creative custom pop-up
+function showCustomPopup(message) {
+    // Create the overlay background
+    const overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    overlay.style.zIndex = "999";
+    overlay.style.display = "flex";
+    overlay.style.justifyContent = "center";
+    overlay.style.alignItems = "center";
+
+    // Create the pop-up container
+    const popup = document.createElement("div");
+    popup.style.position = "relative";
+    popup.style.width = "300px";
+    popup.style.padding = "20px";
+    popup.style.backgroundColor = "#fff";
+    popup.style.borderRadius = "10px";
+    popup.style.textAlign = "center";
+    popup.style.boxShadow = "0px 4px 20px rgba(0, 0, 0, 0.2)";
+    popup.style.animation = "fadeIn 0.5s ease-out";
+
+    // Add the message to the pop-up
+    const messageText = document.createElement("p");
+    messageText.textContent = message;
+    messageText.style.margin = "0";
+    messageText.style.fontSize = "18px";
+    messageText.style.color = "#333";
+    messageText.style.fontWeight = "bold";
+    popup.appendChild(messageText);
+
+    // Add a success/checkmark icon
+    const icon = document.createElement("div");
+    icon.innerHTML = "✔️";
+    icon.style.fontSize = "40px";
+    icon.style.marginTop = "10px";
+    icon.style.color = "#28a745";
+    popup.prepend(icon);
+
+    // Append the pop-up to the overlay
+    overlay.appendChild(popup);
+
+    // Append the overlay to the body
+    document.body.appendChild(overlay);
+
+    // Keyframes for fade-in animation
+    const style = document.createElement("style");
+    style.textContent = `
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Automatically remove the pop-up after 2 seconds
+    setTimeout(() => {
+        document.body.removeChild(overlay); // Remove the overlay and pop-up
+    }, 2000); // 2000ms = 2 seconds
+}
+</script>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">General First Food</a>, All Right Reserved. 
+							 
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+         
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+<script>
+  // Sélectionne tous les boutons avec la classe .bk-btn
+  const filterButtons = document.querySelectorAll('.bk-btn');
+
+  // Sélectionne toutes les cartes de restaurant
+  const restaurantCards = document.querySelectorAll('.restaurant-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Gérer l'effet actif (mise en surbrillance)
+      filterButtons.forEach(b => b.classList.remove('active'));
+      button.classList.add('active');
+
+      // Récupérer la ville sélectionnée et la normaliser en minuscules
+      const selectedCity = button.getAttribute('data-city').toLowerCase();
+
+      // Affiche ou masque les cartes en fonction de la ville
+      restaurantCards.forEach(card => {
+        const cardCity = card.getAttribute('data-city').toLowerCase();
+        if (selectedCity === 'all' || selectedCity === cardCity) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+          observer.unobserve(entry.target); // si tu veux que ça se joue qu'une seule fois
+        }
+      });
+    }, {
+      threshold: 0.1 // déclenche à 10% visible
+    });
+  
+    document.querySelectorAll('.restaurant-card').forEach(card => {
+      card.style.opacity = 0; // pour cacher avant l'animation
+      observer.observe(card);
+    });
+  </script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([31.7917, -7.0926], 6.5);
+
+    // Carte OpenStreetMap (gratuite)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Icône personnalisée Burger King
+    const bkIcon = L.icon({
+      iconUrl: 'img/map_icon.png',
+      iconSize: [50, 50],
+      iconAnchor: [25, 50],
+      popupAnchor: [0, -50]
+    });
+
+    // Liste des restaurants
+    const locations = [
+      { name: "BK Morocco Mall", lat: 33.5806, lng: -7.6918 },
+      { name: "BK Kitea Geant", lat: 33.5372, lng: -7.6422 },
+      { name: "BK Anfa Place", lat: 33.5929, lng: -7.6427 },
+      { name: "BK Borj Fez", lat: 34.0414, lng: -5.0063 },
+      { name: "BK Agdal Rabat", lat: 34.0036, lng: -6.8465 },
+      { name: "BK Maarif", lat: 33.5866, lng: -7.6322 },
+      { name: "BK Carre Eden", lat: 31.631, lng: -8.0087 },
+      { name: "BK Al Jazira", lat: 33.5898, lng: -7.6286 },
+      { name: "BK Tanger City Center", lat: 35.7732, lng: -5.7999 },
+      { name: "BK Al Mazar", lat: 31.5882, lng: -7.9815 },
+      { name: "BK Exit Casa", lat: 33.549, lng: -7.6614 },
+      { name: "BK Sidi Maarouf", lat: 33.5422, lng: -7.6197 },
+      { name: "BK Socco Alto", lat: 35.7431, lng: -5.8345 },
+      { name: "BK Lafayette", lat: 33.5892, lng: -7.6187 },
+      { name: "BK Beni Mellal", lat: 32.3429, lng: -6.3633 },
+      { name: "BK El Jadida", lat: 33.2333, lng: -8.5 },
+      { name: "BK Arribat Center", lat: 34.0005, lng: -6.836 },
+      { name: "BK Menara Mall", lat: 31.618, lng: -8.006 },
+      { name: "BK Laaraache", lat: 35.1987, lng: -6.1517 },
+      { name: "BK Ibn Battouta", lat: 35.7562, lng: -5.8328 },
+      { name: "BK Targa", lat: 31.6556, lng: -8.0545 },
+      { name: "BK T-Relais", lat: 35.6739, lng: -5.9 },
+      { name: "BK Marina Sale", lat: 34.0321, lng: -6.8293 },
+      { name: "BK Zeir", lat: 33.6, lng: -6.2167 },
+      { name: "BK El Bayda", lat: 32.25, lng: -6.37 },
+      { name: "BK Temara", lat: 33.9245, lng: -6.9094 },
+      { name: "BK 2 M-ars", lat: 33.5723, lng: -7.6312 },
+      { name: "BK Carrefour Sale", lat: 34.0512, lng: -6.7702 },
+      { name: "BK Essalama", lat: 30.4113, lng: -9.5375 },
+      { name: "BK Area Mall", lat: 30.4225, lng: -9.5989 },
+      { name: "BK Ola Marrakech", lat: 31.6335, lng: -8.0201 },
+      { name: "BK Sale Bouregreg", lat: 34.036, lng: -6.8276 },
+      { name: "BK Settat", lat: 33.0022, lng: -7.62 },
+    ];
+
+    // Ajouter les marqueurs sur la carte
+    locations.forEach(loc => {
+      L.marker([loc.lat, loc.lng], { icon: bkIcon })
+        .addTo(map)
+        .bindPopup(`<strong>${loc.name}</strong>`);
+    });
+  </script>
+
+
+  <!-- Google Maps API with callback to initMap -->
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxN43WAg0VzFbD1jdgb_IqjAuaxaYmyPU&callback=initMap">
+  </script>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+
+
+<script>
+(function () {
+  if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+    window.chatbase = (...arguments) => {
+      if (!window.chatbase.q) {
+        window.chatbase.q = [];
+      }
+      window.chatbase.q.push(arguments);
+    };
+    window.chatbase = new Proxy(window.chatbase, {
+      get(target, prop) {
+        if (prop === "q") return target.q;
+        return (...args) => target(prop, ...args);
+      },
+    });
+  }
+
+  const onLoad = function () {
+    const script = document.createElement("script");
+    script.src = "https://www.chatbase.co/embed.min.js";
+    script.id = "CxLa0vzvBNle0F7Z67IAS";
+    script.setAttribute("domain", "www.chatbase.co");
+    document.body.appendChild(script);
+
+    window.chatbase('setConfig', {
+      widget: {
+        showDefaultLauncher: false
+      }
+    });
+  };
+
+  if (document.readyState === "complete") {
+    onLoad();
+  } else {
+    window.addEventListener("load", onLoad);
+  }
+})();
+</script>
+<script>
+  const allCards = document.querySelectorAll('.restaurant-card');
+  const showMoreBtn = document.getElementById('showMoreBtn');
+  const cardsPerPage = 8; // 2 lines of 4 cards
+  let visibleCount = cardsPerPage;
+
+  function updateVisibleCards(city = "all") {
+    let count = 0;
+    let totalVisible = 0;
+
+    allCards.forEach(card => {
+      const cardCity = card.getAttribute("data-city").toLowerCase();
+      const matchesFilter = city === "all" || cardCity === city;
+
+      if (matchesFilter) {
+        totalVisible++;
+        if (count < visibleCount) {
+          card.style.display = "block";
+          count++;
+        } else {
+          card.style.display = "none";
+        }
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    showMoreBtn.style.display = visibleCount >= totalVisible ? "none" : "inline-block";
+  }
+
+  // Initial load
+  updateVisibleCards();
+
+  // Filter buttons logic
+  document.querySelectorAll('.bk-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.bk-btn').forEach(b => b.classList.remove('active'));
+      button.classList.add('active');
+      visibleCount = cardsPerPage;
+      updateVisibleCards(button.getAttribute("data-city").toLowerCase());
+    });
+  });
+
+  // Show More button
+  showMoreBtn.addEventListener("click", () => {
+    visibleCount += cardsPerPage;
+    const activeBtn = document.querySelector(".bk-btn.active") || { getAttribute: () => "all" };
+    updateVisibleCards(activeBtn.getAttribute("data-city").toLowerCase());
+  });
+</script>
+
+</body>
+
+<style>
+/* Hide all cards initially */
+.restaurant-card {
+    display: none;
+}
+
+/* Desktop: 8 cards per row (width = 12.5%) */
+@media (min-width: 992px) {
+    .col-lg-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+}
+
+/* Mobile: 6 cards per row (width = 16.66%) */
+@media (max-width: 767.98px) {
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+.restaurant-card {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.restaurant-card[style*="display: block"] {
+    opacity: 1;
+}
+
+
+        #map {
+      height: 80vh;
+      width: 80%;
+    }
+
+</style>
+
+<style>
+
+    .bk-carousel {
+  background: #fff7e6;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bk-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.bk-btn {
+  flex-shrink: 0;
+  margin: 0 6px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+  background: linear-gradient(145deg, #ffe082, #f44336);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 87, 34, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  scroll-snap-align: center;
+}
+
+.bk-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(255, 87, 34, 0.3);
+}
+
+.bk-btn.active {
+  background: linear-gradient(145deg, #f44336, #d32f2f);
+}
+
+
+
+
+
+  .chatbase-container {
+    max-width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .chatbase-iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    min-height: 700px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .chatbase-iframe {
+      min-height: 600px;
+      border-radius: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .chatbase-iframe {
+      min-height: 550px;
+    }
+  }
+</style>
+</html>
